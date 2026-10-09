@@ -1,0 +1,13 @@
+# .NET
+backend/bin/
+backend/obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Windows
+Thumbs.db
+Desktop.ini

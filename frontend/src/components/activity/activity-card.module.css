@@ -1,0 +1,127 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profile {
+  position: relative;
+  min-height: 142px;
+  padding: 14px 16px 30px;
+  gap: 6px;
+  overflow-wrap: break-word;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+.showcase {
+  position: absolute;
+  width: 56%;
+  gap: 0;
+  background: transparent;
+}
+
+.showcasePrimary {
+  top: 15%;
+  left: 12%;
+}
+
+.showcaseSecondary {
+  right: 0;
+  bottom: 20%;
+}
+
+.title {
+  margin: 6px 0 0;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.showcase .title {
+  margin-top: 14px;
+  font-size: 18px;
+}
+
+.titleLink {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.titleLink:focus-visible {
+  outline: 3px solid var(--color-primary-soft);
+  outline-offset: 3px;
+}
+
+.titleLink:hover .title {
+  color: var(--color-primary-hover);
+}
+
+.meta {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.showcase .meta {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+
+.status {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  padding: 7px 10px;
+  color: #697084;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-round);
+  font-size: 10px;
+}
+
+.actions {
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+@media (max-width: 1200px) {
+  .profile .status {
+    position: static;
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase {
+    width: 72%;
+  }
+
+  .showcasePrimary {
+    top: 10%;
+    left: 2%;
+  }
+
+  .showcaseSecondary {
+    right: -2%;
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 360px) {
+  .showcase {
+    width: 78%;
+  }
+
+  .showcase .title {
+    font-size: 15px;
+  }
+}

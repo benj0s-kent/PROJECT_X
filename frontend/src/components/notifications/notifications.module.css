@@ -1,0 +1,231 @@
+.page {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 34px);
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.headerActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.filterButton,
+.markReadButton {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filterButton {
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.filterButtonActive {
+  color: var(--color-primary-hover);
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+}
+
+.markReadButton {
+  color: white;
+  background: var(--color-primary);
+  border: 0;
+}
+
+.markReadButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  min-width: 0;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+
+.unread {
+  background: #f8f7ff;
+  border-color: #cbc8ff;
+}
+
+.typeIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--color-primary-hover);
+  background: var(--color-primary-soft);
+  border-radius: 13px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.content {
+  min-width: 0;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.actorLink,
+.activityLink {
+  color: var(--color-primary-hover);
+  font-weight: 800;
+}
+
+.activityLink {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.date {
+  display: block;
+  margin-top: 8px;
+  color: var(--color-text-light);
+  font-size: 11px;
+}
+
+.unreadDot {
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.emptyState {
+  margin-top: 24px;
+  padding: 48px 24px;
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.emptyState strong {
+  font-size: 17px;
+}
+
+.emptyState p {
+  max-width: 520px;
+  margin: 8px auto 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 24px 14px 40px;
+  }
+
+  .header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .headerActions {
+    justify-content: flex-start;
+  }
+
+  .item {
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .typeIcon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 380px) {
+  .headerActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .filterButton,
+  .markReadButton {
+    width: 100%;
+  }
+}
+
+.filterButton:hover,
+.markReadButton:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.markReadButton:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.actorLink:hover,
+.activityLink:hover {
+  text-decoration: underline;
+}
+
+.readButton {
+  min-height: 32px;
+  padding: 0 10px;
+  color: var(--color-primary-hover);
+  background: var(--color-primary-soft);
+  border: 0;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.readButton:hover {
+  background: #dcd8ff;
+}

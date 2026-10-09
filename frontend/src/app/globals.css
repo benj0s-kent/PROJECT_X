@@ -1,0 +1,129 @@
+:root {
+  /* Основные цвета Kent */
+  --color-primary: #5b5bf7;
+  --color-primary-hover: #4546d9;
+  --color-primary-soft: #e9e7ff;
+
+  --color-accent: #ffb86b;
+  --color-accent-dark: #a75b00;
+  --color-accent-soft: #fff1df;
+
+  --color-success: #22b573;
+  --color-success-dark: #087d50;
+  --color-success-soft: #e3f8ef;
+
+  /* Нейтральные цвета */
+  --color-text: #171923;
+  --color-text-secondary: #6b7280;
+  --color-text-light: #9ca3af;
+
+  --color-background: #f6f7fb;
+  --color-surface: #ffffff;
+
+  --color-border: #dde1ea;
+  --color-border-light: #eef0f5;
+
+  /* Геометрия */
+  --radius-small: 10px;
+  --radius-button: 14px;
+  --radius-card: 20px;
+  --radius-round: 999px;
+
+  /* Тени */
+  --shadow-card: 0 8px 24px rgb(22 24 43 / 8%);
+  --shadow-card-hover: 0 12px 32px rgb(22 24 43 / 12%);
+
+  /* Анимации */
+  --transition-fast: 160ms ease;
+  --transition-normal: 220ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+
+  background: var(--color-background);
+  color: var(--color-text);
+
+  font-family:
+    var(--font-manrope),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 360px) {
+  :root {
+    --radius-card: 16px;
+    --radius-button: 12px;
+  }
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid rgb(91 91 247 / 28%);
+  outline-offset: 3px;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
